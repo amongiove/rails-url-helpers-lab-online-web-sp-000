@@ -8,9 +8,19 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def activate
+    set_student
+    @student.active = !@student.active
+    @student.save
+
+    # render 'students/show'
+    redirect_to :action => 'show'
+  end
+
   private
 
     def set_student
       @student = Student.find(params[:id])
     end
+
 end

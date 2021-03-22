@@ -73,6 +73,10 @@ describe 'Activate page' do
   it "Should redirect to the student show page" do
     visit activate_student_path(@student)
     expect(page.current_path).to eq(student_path(@student))
+
+    puts page
+    puts page.current_path
+    puts student_path(@student)
   end
 end
 
